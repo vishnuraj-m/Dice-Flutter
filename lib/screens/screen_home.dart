@@ -27,10 +27,7 @@ class _ScreenHomeState extends State<ScreenHome> {
             Expanded(
               child: TextButton(
                 onPressed: () {
-                  setState(() {
-                    leftDiceNumber = Random().nextInt(6) + 1;
-                    rightDiceNumber = Random().nextInt(6) + 1;
-                  });
+                  changeDiceByClick();
                   print("left button pressed");
                 },
                 child: Image.asset('assets/images/dice$leftDiceNumber.png'),
@@ -39,10 +36,7 @@ class _ScreenHomeState extends State<ScreenHome> {
             Expanded(
               child: TextButton(
                 onPressed: () {
-                  setState(() {
-                    rightDiceNumber = Random().nextInt(6) + 1;
-                    leftDiceNumber = Random().nextInt(6) + 1;
-                  });
+                  changeDiceByClick();
                   print("right button pressed");
                 },
                 child: Image.asset('assets/images/dice$rightDiceNumber.png'),
@@ -52,5 +46,12 @@ class _ScreenHomeState extends State<ScreenHome> {
         ),
       )),
     );
+  }
+
+  void changeDiceByClick() {
+    setState(() {
+      rightDiceNumber = Random().nextInt(6) + 1;
+      leftDiceNumber = Random().nextInt(6) + 1;
+    });
   }
 }
