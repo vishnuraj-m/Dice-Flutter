@@ -29,6 +29,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                 onPressed: () {
                   setState(() {
                     leftDiceNumber = Random().nextInt(6) + 1;
+                    rightDiceNumber = Random().nextInt(6) + 1;
                   });
                   print("left button pressed");
                 },
@@ -40,6 +41,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                 onPressed: () {
                   setState(() {
                     rightDiceNumber = Random().nextInt(6) + 1;
+                    leftDiceNumber = Random().nextInt(6) + 1;
                   });
                   print("right button pressed");
                 },
